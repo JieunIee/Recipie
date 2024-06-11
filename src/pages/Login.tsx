@@ -1,59 +1,98 @@
 import React from 'react';
-import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
+import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const Login = () => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#FFFFF',
-      }}>
-      <View style={{flex: 1, justifyContent: 'center'}}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
         <Image
           source={require('../assets/Logo.png')}
-          style={{width: 205, height: 76}}
+          style={styles.logo}
         />
       </View>
       <View>
-        <View
-          style={{flexDirection: 'row', alignItems: 'center', width: 327}}>
-          <View style={{flex: 1, height: 1, backgroundColor: '#B4B4B4'}} />
-          <Text
-            style={{
-              fontSize: 14,
-              lineHeight: 14,
-              color: '#828282',
-              marginHorizontal: 9.5,
-            }}>
-            continue with
-          </Text>
-          <View style={{flex: 1, height: 1, backgroundColor: '#B4B4B4'}} />
+        <View style={styles.dividerContainer}>
+          <View style={styles.divider} />
+          <Text style={styles.dividerText}>continue with</Text>
+          <View style={styles.divider} />
         </View>
       </View>
-      <View style={{flex: 1, alignItems: 'center', margin: 24}}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity>
           <Image
             source={require('../assets/GoogleLoginButton.png')}
-            style={{width: 327, height: 40}}
+            style={styles.loginButton}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={{paddingVertical: 24}}>
+        <TouchableOpacity style={styles.loginButtonContainer}>
           <Image
             source={require('../assets/KakaoLoginButton.png')}
-            style={{width: 327, height: 40}}
+            style={styles.loginButton}
           />
         </TouchableOpacity>
-        <Text style={{fontSize: 12, lineHeight: 15, color: '#828282', textAlign: 'center'}}>
+        <Text style={styles.footerText}>
           By clicking continue, you agree to our{' '}
-          <Text style={{color: '#000'}}>Terms of Service</Text>{' '}
+          <Text style={styles.footerLink}>Terms of Service</Text>{' '}
           and{' '}
-          <Text style={{color: '#000'}}>Privacy Policy</Text>
+          <Text style={styles.footerLink}>Privacy Policy</Text>
         </Text>
       </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFF',
+  },
+  logoContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  logo: {
+    width: 205,
+    height: 76,
+  },
+  dividerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 327,
+  },
+  divider: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#B4B4B4',
+  },
+  dividerText: {
+    fontSize: 14,
+    lineHeight: 14,
+    color: '#828282',
+    marginHorizontal: 9.5,
+  },
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'center',
+    margin: 24,
+  },
+  loginButtonContainer: {
+    paddingVertical: 24,
+  },
+  loginButton: {
+    width: 327,
+    height: 40,
+  },
+  footerText: {
+    fontSize: 12,
+    lineHeight: 15,
+    color: '#828282',
+    textAlign: 'center',
+  },
+  footerLink: {
+    color: '#000',
+  },
+});
 
 export default Login;
