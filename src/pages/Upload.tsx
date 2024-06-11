@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView, Text } from 'react-native';
 
-const Support = () => {
+const Upload = () => {
     return (
         <SafeAreaView>
-            <Text>Support Screen</Text>
+            <Text>Upload Screen</Text>
         </SafeAreaView>
     )
 }
 
-export default Support;
+export default Upload;
