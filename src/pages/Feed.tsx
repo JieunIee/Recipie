@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 import Swiper from 'react-native-swiper';
 
 const Feed = () => {
@@ -25,20 +19,26 @@ const Feed = () => {
         />
       </View>
       <Text style={styles.sectionTitle}>내 레시피북</Text>
-      <View style={styles.recipeBook}></View>
+      <View style={styles.recipeBookWrapper}>
+        <Image
+          source={require('../assets/Images/myRecipie.png')}
+          style={styles.recipeBook}
+        />
+      </View>
       <Text style={styles.sectionTitle}>인기 레시피 북</Text>
       <Swiper
         style={styles.wrapper}
         showsPagination={true}
-        paginationStyle={{ bottom: 0}}
+        paginationStyle={{bottom: 0}}
         dotStyle={styles.dotStyle}
         activeDotStyle={styles.activeDotStyle}
         loop={true}
         autoplay={false}
-        removeClippedSubviews={false}
-      >
+        removeClippedSubviews={false}>
         <View style={styles.slide}>
-          <View style={styles.popularRecipe}></View>
+          <Image
+            source={require('../assets/Images/popularRecipie.png')}
+            style={styles.popularRecipe}></Image>
         </View>
         <View style={styles.slide}>
           <View style={styles.popularRecipe}></View>
@@ -94,12 +94,15 @@ const styles = StyleSheet.create({
     marginLeft: 14.2,
     marginVertical: 14,
   },
-  recipeBook: {
-    height: 298,
-    backgroundColor: '#DADADA',
-    borderRadius: 12,
+  recipeBookWrapper: {
+    alignItems: 'center',
     marginHorizontal: 16,
     marginBottom: 26,
+  },
+  recipeBook: {
+    width: 298,
+    height: 298,
+    borderRadius: 12,
   },
   wrapper: {
     height: 200,
