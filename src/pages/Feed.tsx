@@ -54,7 +54,7 @@ const Feed = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFF',
   },
   searchContainer: {
     flexDirection: 'row',
