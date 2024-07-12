@@ -8,7 +8,11 @@
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import Router from './src/Router.tsx';
-import SplashScreen from "react-native-splash-screen";
+import SplashScreen from 'react-native-splash-screen';
+
+if (__DEV__) {
+  require('./ReactotronConfig');
+}
 
 function App(): React.JSX.Element {
   useEffect(() => {
@@ -20,7 +24,7 @@ function App(): React.JSX.Element {
     <NavigationContainer>
       <Router />
     </NavigationContainer>
-  )
-};
+  );
+}
 
 export default App;
