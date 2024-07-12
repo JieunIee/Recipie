@@ -36,7 +36,7 @@ const Header: React.FC<Props> = ({status}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFF',
+    backgroundColor: '#FFF',
   },
   headerContainer: {
     height: 66,
