@@ -1,5 +1,8 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator, BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import {
+  createBottomTabNavigator,
+  BottomTabBarProps,
+} from '@react-navigation/bottom-tabs';
 import CustomTabBar from './components/CustomTabBar';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
@@ -18,7 +21,8 @@ const MainTab = () => {
       tabBar={renderTabBar}
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+      backBehavior="history">
       <Tab.Screen name="Feed" component={Feed} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Upload" component={Upload} />
@@ -32,8 +36,6 @@ const Router = () => {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="MainTab" component={MainTab} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Feed" component={Feed} />
-      <Stack.Screen name="Search" component={Search} />
       <Stack.Screen name="Detail" component={Detail} />
     </Stack.Navigator>
   );
